@@ -1,0 +1,13 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"preferredVersions": { "php": "8.3", "wp": "latest" },
+	"features": { "networking": true },
+	"steps": [
+		{ "step": "login", "username": "admin", "password": "password" },
+		{ "step": "setSiteLanguage", "language": "de_DE" },
+		{ "step": "installTheme", "themeData": { "resource": "url", "url": "https://raw.githubusercontent.com/SpVggGH/spvgg-wordpress-theme/main/spvgg-theme.zip" }, "options": { "activate": true } },
+		{ "step": "installPlugin", "pluginData": { "resource": "url", "url": "https://raw.githubusercontent.com/SpVggGH/spvgg-wordpress-theme/main/spvgg-demo.zip" }, "options": { "activate": false } },
+		{ "step": "runPHP", "code": "<?php require '/wordpress/wp-content/plugins/spvgg-demo/seed.php';" }
+	]
+}
